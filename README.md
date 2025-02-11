@@ -1,3 +1,12 @@
+# Lung Cancer Probability Prediction
+
+[![Render Deployment](https://img.shields.io/badge/Deployed%20on-Render-46a2f1.svg?logo=render)](https://lung-cancer-probability-prediction.onrender.com)
+[![Flask](https://img.shields.io/badge/Built%20With-Flask-blue.svg?logo=flask)](https://flask.palletsprojects.com/)
+[![GitHub](https://img.shields.io/badge/Open%20Source-GitHub-black.svg?logo=github)](https://github.com/YOUR_USERNAME/YOUR_REPO)
+
+🔗 **Live Demo:** [Lung Cancer Prediction](https://lung-cancer-probability-prediction.onrender.com)
+
+
 # Lung Cancer Prediction
 
 ## 📌 Project Overview
