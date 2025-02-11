@@ -4,7 +4,7 @@
 [![Flask](https://img.shields.io/badge/Built%20With-Flask-blue.svg?logo=flask)](https://flask.palletsprojects.com/)
 [![GitHub](https://img.shields.io/badge/Open%20Source-GitHub-black.svg?logo=github)](https://github.com/YOUR_USERNAME/YOUR_REPO)
 
-🔗 **Live Demo:** https://lung-cancer-probability-prediction.onrender.com
+🔗 **Live Demo:** [Lung Cancer Prediction](https://lung-cancer-probability-prediction.onrender.com)
 
 
 # Lung Cancer Prediction
