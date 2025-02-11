@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Lung Cancer Prediction</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <style>
+        .switch {
+            position: relative;
+            display: inline-block;
+            width: 50px;
+            height: 28px;
+        }
+        .slider {
+            position: absolute;
+            cursor: pointer;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: #ccc;
+            transition: .4s;
+            border-radius: 28px;
+        }
+        .slider:before {
+            position: absolute;
+            content: "";
+            height: 20px;
+            width: 20px;
+            left: 4px;
+            bottom: 4px;
+            background-color: white;
+            transition: .4s;
+            border-radius: 50%;
+        }
+        input:checked + .slider {
+            background-color: #2196F3;
+        }
+        input:checked + .slider:before {
+            transform: translateX(22px);
+        }
+        .category-card {
+            margin-bottom: 10px;
+            padding: 10px;
+            border-radius: 5px;
+            background-color: #f8f9fa;
+        }
+        .category-title {
+            font-size: 1rem;
+            font-weight: 500;
+            margin-bottom: 2px;
+        }
+        .category-desc {
+            font-size: 0.85rem;
+            color: #666;
+        }
+    </style>
+</head>
+<body>
+    <div class="container mt-3">
+        <h2 class="text-center mb-4">Lung Cancer Prediction</h2>
+        <form method="POST">
+            <div class="row">
+                <!-- Gender -->
+                <div class="col-md-6">
+                    <div class="category-card d-flex align-items-center justify-content-between">
+                        <div>
+                            <div class="category-title">Gender</div>
+                            <div class="category-desc">Male = 1, Female = 0</div>
+                        </div>
+                        <label class="switch">
+                            <input type="checkbox" name="gender" value="1" />
+                            <span class="slider"></span>
+                        </label>
+                    </div>
+                </div>
+
+                <!-- Age -->
+                <div class="col-md-6">
+                    <div class="category-card d-flex align-items-center justify-content-between">
+                        <div>
+                            <div class="category-title">Age</div>
+                            <div class="category-desc">Enter your age</div>
+                        </div>
+                        <input type="number" name="age" class="form-control" style="width: 100px;" required />
+                    </div>
+                </div>
+
+                <!-- Smoking -->
+                <div class="col-md-6">
+                    <div class="category-card d-flex align-items-center justify-content-between">
+                        <div>
+                            <div class="category-title">Smoking</div>
+                            <div class="category-desc">Do you smoke regularly?</div>
+                        </div>
+                        <label class="switch">
+                            <input type="checkbox" name="smoking" value="1" />
+                            <span class="slider"></span>
+                        </label>
+                    </div>
+                </div>
+
+                <!-- Yellow Fingers -->
+                <div class="col-md-6">
+                    <div class="category-card d-flex align-items-center justify-content-between">
+                        <div>
+                            <div class="category-title">Yellow Fingers</div>
+                            <div class="category-desc">Do you have yellow fingers?</div>
+                        </div>
+                        <label class="switch">
+                            <input type="checkbox" name="yellow_fingers" value="1" />
+                            <span class="slider"></span>
+                        </label>
+                    </div>
+                </div>
+
+                <!-- Anxiety -->
+                <div class="col-md-6">
+                    <div class="category-card d-flex align-items-center justify-content-between">
+                        <div>
+                            <div class="category-title">Anxiety</div>
+                            <div class="category-desc">Frequent anxiety?</div>
+                        </div>
+                        <label class="switch">
+                            <input type="checkbox" name="anxiety" value="1" />
+                            <span class="slider"></span>
+                        </label>
+                    </div>
+                </div>
+
+                <!-- Peer Pressure -->
+                <div class="col-md-6">
+                    <div class="category-card d-flex align-items-center justify-content-between">
+                        <div>
+                            <div class="category-title">Peer Pressure</div>
+                            <div class="category-desc">Do you feel peer pressure?</div>
+                        </div>
+                        <label class="switch">
+                            <input type="checkbox" name="peer_pressure" value="1" />
+                            <span class="slider"></span>
+                        </label>
+                    </div>
+                </div>
+
+                <!-- Chronic Disease -->
+                <div class="col-md-6">
+                    <div class="category-card d-flex align-items-center justify-content-between">
+                        <div>
+                            <div class="category-title">Chronic Disease</div>
+                            <div class="category-desc">Any chronic disease?</div>
+                        </div>
+                        <label class="switch">
+                            <input type="checkbox" name="chronic_disease" value="1" />
+                            <span class="slider"></span>
+                        </label>
+                    </div>
+                </div>
+
+                <!-- Fatigue -->
+                <div class="col-md-6">
+                    <div class="category-card d-flex align-items-center justify-content-between">
+                        <div>
+                            <div class="category-title">Fatigue</div>
+                            <div class="category-desc">Frequent fatigue?</div>
+                        </div>
+                        <label class="switch">
+                            <input type="checkbox" name="fatigue" value="1" />
+                            <span class="slider"></span>
+                        </label>
+                    </div>
+                </div>
+
+                <!-- Allergy -->
+                <div class="col-md-6">
+                    <div class="category-card d-flex align-items-center justify-content-between">
+                        <div>
+                            <div class="category-title">Allergy</div>
+                            <div class="category-desc">Any allergies?</div>
+                        </div>
+                        <label class="switch">
+                            <input type="checkbox" name="allergy" value="1" />
+                            <span class="slider"></span>
+                        </label>
+                    </div>
+                </div>
+
+                <!-- Wheezing -->
+                <div class="col-md-6">
+                    <div class="category-card d-flex align-items-center justify-content-between">
+                        <div>
+                            <div class="category-title">Wheezing</div>
+                            <div class="category-desc">Do you experience wheezing?</div>
+                        </div>
+                        <label class="switch">
+                            <input type="checkbox" name="wheezing" value="1" />
+                            <span class="slider"></span>
+                        </label>
+                    </div>
+                </div>
+
+                <!-- Alcohol Consuming -->
+                <div class="col-md-6">
+                    <div class="category-card d-flex align-items-center justify-content-between">
+                        <div>
+                            <div class="category-title">Alcohol Consuming</div>
+                            <div class="category-desc">Regular alcohol consumption?</div>
+                        </div>
+                        <label class="switch">
+                            <input type="checkbox" name="alcohol_consuming" value="1" />
+                            <span class="slider"></span>
+                        </label>
+                    </div>
+                </div>
+
+                <!-- Coughing -->
+                <div class="col-md-6">
+                    <div class="category-card d-flex align-items-center justify-content-between">
+                        <div>
+                            <div class="category-title">Coughing</div>
+                            <div class="category-desc">Persistent cough?</div>
+                        </div>
+                        <label class="switch">
+                            <input type="checkbox" name="coughing" value="1" />
+                            <span class="slider"></span>
+                        </label>
+                    </div>
+                </div>
+
+                <!-- Shortness of Breath -->
+                <div class="col-md-6">
+                    <div class="category-card d-flex align-items-center justify-content-between">
+                        <div>
+                            <div class="category-title">Shortness of Breath</div>
+                            <div class="category-desc">Experience shortness of breath?</div>
+                        </div>
+                        <label class="switch">
+                            <input type="checkbox" name="shortness_of_breath" value="1" />
+                            <span class="slider"></span>
+                        </label>
+                    </div>
+                </div>
+
+                <!-- Swallowing Difficulty -->
+                <div class="col-md-6">
+                    <div class="category-card d-flex align-items-center justify-content-between">
+                        <div>
+                            <div class="category-title">Swallowing Difficulty</div>
+                            <div class="category-desc">Difficulty swallowing?</div>
+                        </div>
+                        <label class="switch">
+                            <input type="checkbox" name="swallowing_difficulty" value="1" />
+                            <span class="slider"></span>
+                        </label>
+                    </div>
+                </div>
+
+                <!-- Chest Pain -->
+                <div class="col-md-6">
+                    <div class="category-card d-flex align-items-center justify-content-between">
+                        <div>
+                            <div class="category-title">Chest Pain</div>
+                            <div class="category-desc">Do you experience chest pain?</div>
+                        </div>
+                        <label class="switch">
+                            <input type="checkbox" name="chest_pain" value="1" />
+                            <span class="slider"></span>
+                        </label>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Predict Button -->
+            <div class="text-center mt-4">
+                <button type="submit" class="btn btn-primary btn-lg">Predict</button>
+            </div>
+        </form>
+
+        <!-- Display Prediction Result -->
+        {% if prediction %}
+            <div class="mt-4 alert alert-info">
+                <h4 class="alert-heading">Prediction Result:</h4>
+                <p class="mb-0">{{ prediction }}</p>
+            </div>
+        {% endif %}
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
