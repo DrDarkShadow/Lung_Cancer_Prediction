@@ -22,6 +22,12 @@ This project focuses on predicting lung cancer using machine learning models. It
 
 ---
 
+## 🖼️ Project Screenshot
+![image](https://github.com/user-attachments/assets/9e65fe40-8d19-492d-a46d-195d57d7be38)
+
+
+---
+
 ## 📂 Dataset
 The dataset used for training and evaluation is **survey lung cancer.csv**.
 
